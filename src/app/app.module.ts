@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { AngularLoginBrokerLibraryModule } from 'angular-login-broker-library';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -8,7 +8,8 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AngularLoginBrokerLibraryModule
   ],
   providers: [],
   bootstrap: [AppComponent]
