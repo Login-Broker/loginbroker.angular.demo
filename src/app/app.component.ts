@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularLoginBrokerLibraryService } from 'angular-login-broker-library';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'login-demo';
+
+  constructor(private loginBrokerService: AngularLoginBrokerLibraryService) {}
 
   handleSessionReceived(sessionId: string): void {
     console.log('Received sessionId', sessionId);
@@ -17,12 +20,12 @@ export class AppComponent {
     console.log('Error happened', error);
   }
 
-  // startLoginProcess(tenantName: string, platform: string): void {
-  //   this.loginBrokerService.startLoginProcess(
-  //     tenantName,
-  //     platform,
-  //     this.handleSessionReceived.bind(this),
-  //     this.handleErrorReceived.bind(this)
-  //   );
-  // }
+  startLoginProcess(tenantName: string, platform: string): void {
+    this.loginBrokerService.startLoginProcess(
+      tenantName,
+      platform,
+      this.handleSessionReceived.bind(this),
+      this.handleErrorReceived.bind(this)
+    );
+  }
 }
