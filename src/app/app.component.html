@@ -303,18 +303,18 @@
 </style>
 
 <div class="App">
-  <LoginBrokerButton
+  <app-login-broker-button
     [tenantName]="'loginbroker'"
     [platform]="'google'"
     [onSessionReceived]="handleSessionReceived.bind(this)"
     [onErrorReceived]="handleErrorReceived.bind(this)">
-  </LoginBrokerButton>
-  <LoginBrokerButton
+  </app-login-broker-button>
+  <app-login-broker-button
     [tenantName]="'loginbroker'"
     [platform]="'github'"
     [onSessionReceived]="handleSessionReceived.bind(this)"
     [onErrorReceived]="handleErrorReceived.bind(this)">
-  </LoginBrokerButton>
+  </app-login-broker-button>
 
   <!-- Example using the Angular service directly
   <button (click)="startLoginProcess('loginbroker', 'google')">Start Login Process (Google)</button>
